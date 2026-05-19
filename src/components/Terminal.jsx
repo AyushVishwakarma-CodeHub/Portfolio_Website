@@ -107,7 +107,8 @@ const Terminal = () => {
 
         {/* Input prompt */}
         <form onSubmit={handleCommand} className="terminal-prompt">
-          <span className="prompt-label">ayushraj@bio:~$</span>
+          <span className="prompt-label desktop-prompt">ayushraj@bio:~$</span>
+          <span className="prompt-label mobile-prompt">ayush@bio:~$</span>
           <input
             type="text"
             className="terminal-input"

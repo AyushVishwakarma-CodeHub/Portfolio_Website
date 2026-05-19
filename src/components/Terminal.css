@@ -148,3 +148,37 @@
   color: var(--accent-color);
   transform: scale(1.1);
 }
+
+.mobile-prompt {
+  display: none;
+}
+
+.desktop-prompt {
+  display: inline;
+}
+
+@media (max-width: 480px) {
+  .desktop-prompt {
+    display: none;
+  }
+  .mobile-prompt {
+    display: inline;
+  }
+  .terminal-container {
+    margin: 24px auto 0 auto;
+  }
+  .terminal-body {
+    padding: 16px;
+    min-height: 240px;
+  }
+  .terminal-history {
+    font-size: 0.82rem;
+    gap: 6px;
+  }
+  .prompt-label {
+    font-size: 0.82rem;
+  }
+  .terminal-input {
+    font-size: 0.82rem;
+  }
+}
