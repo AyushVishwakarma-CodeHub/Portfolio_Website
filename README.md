@@ -1,16 +1,25 @@
-# React + Vite
+# Ayush Raj | Software Engineer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Demo: **[ayushrajvishwakarma.in](https://ayushrajvishwakarma.in)**
 
-Currently, two official plugins are available:
+A premium, highly interactive, and fully responsive developer portfolio built using React, Vite, and CSS. This portfolio showcases my professional journey, academic background, patents, coding achievements, and core technical skills.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Link
+🔗 **Visit the Live Site:** [https://ayushrajvishwakarma.in](https://ayushrajvishwakarma.in)
 
-## React Compiler
+## ✨ Features
+- **Interactive Bio Terminal**: A fully functional mock terminal console where users can run commands like `help`, `about`, `skills`, `patents`, and `contact`.
+- **Dynamic Projects Showcase**: Responsive projects grid with live tech badges and project filtering capabilities.
+- **Achievements & Education Timeline**: Interactive animated roadmap detailing patents, LPU hackathon victories, and academic milestones.
+- **Credential Verification**: Instant popups and direct external links to verify professional AI and ML certificates from Coursera and Kaggle.
+- **Clean Luxury Dark Aesthetic**: Hand-crafted dark-mode-first styling with premium glassmorphism, accent glows, and responsive styling optimized for mobile viewports.
+- **Floating AI Assistant Widget**: Responsive chatbot widget to answer recruiter queries.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
+- **Frontend Core**: React 18, Vite
+- **Styling**: Vanilla CSS, Framer Motion (for smooth entrance transitions), Lucide React (for icons)
+- **Deployment**: Vercel (CI/CD automated pipeline)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Project Structure
+- `src/components/`: Modular React widgets (Terminal, Chatbot, CustomCursor, Navbar, Hero, Skills, Projects, Experience, Certifications, Extracurriculars, FAQ, Contact)
+- `src/index.css`: Baseline global tokens, colors, custom variables, and responsive layout rules
