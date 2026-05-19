@@ -11,19 +11,25 @@ const Certifications = () => {
       title: "Microsoft Foundations of AI & Machine Learning",
       issuer: "Coursera",
       image: "/coursera_cert.png?v=3",
-      link: "https://www.coursera.org/account/accomplishments/verify/87G5EI8UUDKN"
+      link: "https://www.coursera.org/account/accomplishments/verify/87G5EI8UUDKN",
+      fit: "contain",
+      bg: "#ffffff"
     },
     {
       title: "5-Day AI Agents Intensive Course with Google",
       issuer: "Kaggle",
       image: "/kaggle_cert.png?v=4",
-      link: "https://www.kaggle.com/certification/badges/ayushraj2908/105"
+      link: "https://www.kaggle.com/certification/badges/ayushraj2908/105",
+      fit: "contain",
+      bg: "#ffffff"
     },
     {
       title: "Tech Blitz 2025 Hackathon",
       issuer: "Coding Ninjas LPU",
       image: "/hackathon_poster.jpg",
-      certificateImage: "/hackathon_cert.png"
+      certificateImage: "/hackathon_cert.png",
+      fit: "cover",
+      bg: "#0a0a0a"
     }
   ];
 
@@ -47,8 +53,13 @@ const Certifications = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <div className="cert-image-container">
-                <img src={cert.image} alt={cert.title} className="cert-image" />
+              <div className="cert-image-container" style={{ backgroundColor: cert.bg }}>
+                <img 
+                  src={cert.image} 
+                  alt={cert.title} 
+                  className="cert-image" 
+                  style={{ objectFit: cert.fit }}
+                />
                 <div className="cert-overlay">
                   {cert.link && (
                     <a 
