@@ -1,0 +1,34 @@
+.custom-cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(59, 130, 246, 0.3);
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: screen;
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  pointer-events: none;
+  z-index: 99999;
+}
+
+/* Ensure default cursor is hidden on body when custom cursor is active */
+@media (min-width: 769px) {
+  body {
+    cursor: none;
+  }
+  a, button, input, select, textarea {
+    cursor: none !important;
+  }
+}

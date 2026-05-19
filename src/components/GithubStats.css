@@ -1,0 +1,345 @@
+.github-section {
+  background-color: var(--bg-secondary);
+  padding: 100px 0;
+}
+
+.github-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 40px;
+  margin-top: 40px;
+  align-items: center;
+}
+
+.left-stats-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.stats-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* LeetCode Premium Card */
+.leetcode-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  border: 1px solid var(--glass-border);
+  transition: var(--transition-smooth);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.leetcode-card:hover {
+  border-color: #ffc01e;
+  box-shadow: 0 10px 25px rgba(255, 192, 30, 0.15);
+}
+
+.leetcode-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.leetcode-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.leetcode-logo-icon {
+  color: #ffc01e;
+}
+
+.view-profile-badge {
+  font-size: 0.72rem;
+  background: rgba(255, 192, 30, 0.1);
+  color: #ffc01e;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.leetcode-body {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.leetcode-circle-progress {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.leetcode-circle-bg {
+  stroke: rgba(255, 255, 255, 0.05);
+}
+
+.leetcode-circle-indicator {
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.leetcode-circle-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.leetcode-solved-num {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.leetcode-solved-lbl {
+  font-size: 0.62rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.leetcode-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.leetcode-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bar-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.bar-label.easy { color: #00b8a3; }
+.bar-label.medium { color: #ffc01e; }
+.bar-label.hard { color: #ef4743; }
+
+.bar-count {
+  color: var(--text-secondary);
+}
+
+.bar-track {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.bar-fill.easy { background-color: #00b8a3; }
+.bar-fill.medium { background-color: #ffc01e; }
+.bar-fill.hard { background-color: #ef4743; }
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  border-radius: var(--border-radius-md);
+  transition: var(--transition-smooth);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
+}
+
+.stat-card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.calendar-board {
+  border-radius: var(--border-radius-md);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.view-github-link {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.view-github-link:hover {
+  filter: brightness(1.2);
+}
+
+.calendar-grid-wrapper {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  grid-auto-flow: column;
+  grid-template-rows: repeat(7, 1fr);
+  gap: 4px;
+  min-width: 480px;
+}
+
+.calendar-cell {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  transition: transform 0.1s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.calendar-cell:hover {
+  transform: scale(1.3);
+  z-index: 2;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Tooltip styles */
+.calendar-cell::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 100;
+}
+
+.calendar-cell:hover::before {
+  opacity: 1;
+}
+
+/* Contribution Levels */
+.level-0 { background-color: #161b22; }
+.level-1 { background-color: #0e4429; }
+.level-2 { background-color: #006d32; }
+.level-3 { background-color: #26a641; }
+.level-4 { background-color: #39d353; }
+
+.calendar-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.calendar-legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.legend-cell {
+  width: 10px;
+  height: 10px;
+  border-radius: 1px;
+}
+
+@media (max-width: 1100px) {
+  .github-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .leetcode-body {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .leetcode-bars {
+    width: 100%;
+  }
+}

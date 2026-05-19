@@ -1,0 +1,61 @@
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.2);
+  padding: 0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-to-top-btn:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(59, 130, 246, 0.4);
+}
+
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg); /* Start progress from top center */
+}
+
+.progress-ring-bg {
+  transition: stroke 0.3s ease;
+}
+
+.progress-ring-indicator {
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.arrow-icon-wrapper {
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform 0.3s var(--transition-smooth);
+}
+
+.scroll-to-top-btn:hover .arrow-icon-wrapper {
+  transform: translateY(-3px);
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top-btn {
+    bottom: 24px;
+    right: 24px;
+  }
+}
