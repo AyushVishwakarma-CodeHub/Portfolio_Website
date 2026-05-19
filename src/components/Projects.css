@@ -154,3 +154,18 @@
   color: white;
   box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
 }
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .filter-container {
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}

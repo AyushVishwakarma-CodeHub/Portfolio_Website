@@ -100,3 +100,27 @@
   line-height: 1.6;
   font-size: 0.95rem;
 }
+
+@media (max-width: 768px) {
+  .extra-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .extra-image-container {
+    height: 180px;
+  }
+  .extra-content {
+    padding: 20px;
+    gap: 8px;
+  }
+  .extra-title {
+    font-size: 1.25rem;
+  }
+  .extra-org {
+    font-size: 1rem;
+  }
+  .extra-meta {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+}

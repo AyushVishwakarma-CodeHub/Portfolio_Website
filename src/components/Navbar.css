@@ -143,7 +143,11 @@
     height: 100vh;
     background: var(--bg-primary);
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Align from top so content fits better */
+    align-items: center;
+    padding: 80px 24px 40px 24px; /* Space for close button and bottom padding */
+    gap: 16px; /* Reduced gap to fit all items comfortably */
+    overflow-y: auto; /* Support vertical scroll if screen height is very short */
     transition: var(--transition-smooth);
     border-left: 1px solid var(--glass-border);
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
@@ -153,8 +157,16 @@
     right: 0;
   }
   
+  .nav-link {
+    font-size: 1.15rem; /* Larger touch targets for mobile */
+    padding: 8px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
   .theme-toggle {
-    margin-top: 24px;
+    margin-top: 16px;
+    margin-bottom: 20px;
   }
 }
 

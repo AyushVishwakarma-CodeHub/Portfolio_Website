@@ -175,6 +175,20 @@ section {
   background: var(--text-secondary);
 }
 
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
 /* Animations */
 @keyframes float {
   0% { transform: translateY(0px); }

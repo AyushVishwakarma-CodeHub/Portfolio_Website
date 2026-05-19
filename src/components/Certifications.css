@@ -165,3 +165,24 @@
   background: var(--accent-color);
   transform: rotate(90deg);
 }
+
+@media (max-width: 768px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .cert-image-container {
+    height: 180px;
+  }
+  .cert-content {
+    padding: 16px;
+    gap: 8px;
+  }
+  .cert-title {
+    font-size: 1.15rem;
+  }
+  .verify-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+}
