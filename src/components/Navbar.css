@@ -138,7 +138,7 @@
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 280px;
     height: 100vh;
     background: var(--bg-primary);
@@ -148,13 +148,14 @@
     padding: 80px 24px 40px 24px; /* Space for close button and bottom padding */
     gap: 16px; /* Reduced gap to fit all items comfortably */
     overflow-y: auto; /* Support vertical scroll if screen height is very short */
-    transition: var(--transition-smooth);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(100%);
     border-left: 1px solid var(--glass-border);
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
   }
   
   .nav-links.open {
-    right: 0;
+    transform: translateX(0);
   }
   
   .nav-link {
