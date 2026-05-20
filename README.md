@@ -1,7 +1,5 @@
 # Ayush Raj | Software Engineer Portfolio
 
-Live Demo: **[ayushrajvishwakarma.in](https://ayushrajvishwakarma.in)**
-
 A premium, highly interactive, and fully responsive developer portfolio built using React, Vite, and CSS. This portfolio showcases my professional journey, academic background, patents, coding achievements, and core technical skills.
 
 ## 🚀 Live Link
