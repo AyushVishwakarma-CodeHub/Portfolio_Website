@@ -137,7 +137,7 @@ const Contact = () => {
                     <option value="Job Opportunity (Full-time / Internship)">Job Opportunity (Full-time / Internship)</option>
                     <option value="Freelance Project">Freelance Project</option>
                     <option value="Networking / Mentorship">Networking / Mentorship</option>
-                    <option value="Just saying Hi!">Just saying Hi!</option>
+                    <option value="General Query">General Query</option>
                   </select>
                 </div>
                 <div className="form-group">
