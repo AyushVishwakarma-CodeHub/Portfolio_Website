@@ -9,7 +9,7 @@ const Contact = () => {
     name: '',
     email: '',
     company: '',
-    purpose: 'Job Opportunity (Internship / Full-time/Remote/ Hybrid)',
+    purpose: 'Job Opportunity (Internship / Full-time / Remote / Hybrid)',
     message: ''
   });
 
@@ -134,7 +134,7 @@ const Contact = () => {
                     className="form-input form-select"
                     required
                   >
-                    <option value="Job Opportunity (Internship / Full-time/Remote/ Hybrid)">Job Opportunity (Internship / Full-time/Remote/ Hybrid)</option>
+                    <option value="Job Opportunity (Internship / Full-time / Remote / Hybrid)">Job Opportunity (Internship / Full-time / Remote / Hybrid)</option>
                     <option value="Interview / Recruitment Discussion">Interview / Recruitment Discussion</option>
                     <option value="Freelance / Project Collaboration">Freelance / Project Collaboration</option>
                     <option value="Project Discussion / Collaboration">Project Discussion / Collaboration</option>
