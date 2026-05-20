@@ -40,18 +40,24 @@
   justify-content: center;
 }
 
+.info-card.clickable-card {
+  text-decoration: none;
+  color: inherit;
+}
+
 .info-card h4 {
   font-size: 1.1rem;
   margin-bottom: 4px;
+  color: var(--text-primary);
 }
 
-.info-card a, .info-card p {
+.info-card .info-link, .info-card p {
   color: var(--text-secondary);
   font-size: 0.95rem;
   transition: var(--transition-smooth);
 }
 
-.info-card a:hover {
+.info-card:hover .info-link {
   color: var(--accent-color);
 }
 

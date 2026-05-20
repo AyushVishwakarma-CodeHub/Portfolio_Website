@@ -39,24 +39,24 @@ const Contact = () => {
 
           <div className="contact-grid">
             <div className="contact-info">
-              <div className="info-card glass-panel">
+              <a href="mailto:ayushvishwakarmadto29@gmail.com" className="info-card glass-panel clickable-card">
                 <div className="info-icon">
                   <Mail size={24} />
                 </div>
                 <div>
                   <h4>Email</h4>
-                  <a href="mailto:ayushvishwakarmadto29@gmail.com">ayushvishwakarmadto29@gmail.com</a>
+                  <span className="info-link">ayushvishwakarmadto29@gmail.com</span>
                 </div>
-              </div>
-              <div className="info-card glass-panel">
+              </a>
+              <a href="tel:+918340489386" className="info-card glass-panel clickable-card">
                 <div className="info-icon">
                   <Phone size={24} />
                 </div>
                 <div>
                   <h4>Phone</h4>
-                  <a href="tel:+918340489386">+91 8340489386</a>
+                  <span className="info-link">+91 8340489386</span>
                 </div>
-              </div>
+              </a>
               <div className="info-card glass-panel">
                 <div className="info-icon">
                   <MapPin size={24} />
