@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, MapPin, Mail, Phone } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
@@ -54,6 +55,15 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4>Phone</h4>
+                  <span className="info-link">+91 8340489386</span>
+                </div>
+              </a>
+              <a href="https://wa.me/918340489386?text=Hi%20Ayush,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20connect!" target="_blank" rel="noopener noreferrer" className="info-card glass-panel clickable-card">
+                <div className="info-icon">
+                  <FaWhatsapp size={24} />
+                </div>
+                <div>
+                  <h4>WhatsApp</h4>
                   <span className="info-link">+91 8340489386</span>
                 </div>
               </a>

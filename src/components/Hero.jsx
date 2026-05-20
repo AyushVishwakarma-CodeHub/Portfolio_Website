@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Code2, Download, ArrowRight } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Hero.css';
 
@@ -83,6 +83,9 @@ const Hero = () => {
             </a>
             <a href="https://leetcode.com/u/AYUSH_VISHWAKARMA_/" target="_blank" rel="noopener noreferrer" className="social-icon">
               <Code2 size={22} />
+            </a>
+            <a href="https://wa.me/918340489386?text=Hi%20Ayush,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20connect!" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <FaWhatsapp size={22} />
             </a>
             <a href="mailto:ayushvishwakarmadto29@gmail.com" className="social-icon">
               <Mail size={22} />
