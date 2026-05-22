@@ -38,6 +38,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-card > div:last-child {
+  min-width: 0;
+  flex: 1;
 }
 
 .info-card.clickable-card {
@@ -55,6 +61,8 @@
   color: var(--text-secondary);
   font-size: 0.95rem;
   transition: var(--transition-smooth);
+  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 .info-card:hover .info-link {
@@ -136,5 +144,50 @@
 @media (max-width: 992px) {
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    margin-bottom: 60px;
+  }
+  
+  .contact-form-container {
+    padding: 30px 20px;
+  }
+  
+  .info-card {
+    padding: 20px;
+    gap: 16px;
+  }
+  
+  .info-icon {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-container {
+    padding: 20px 16px;
+  }
+  
+  .info-card {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .info-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .info-card h4 {
+    font-size: 1.05rem;
+  }
+  
+  .info-card .info-link, .info-card p {
+    font-size: 0.85rem;
   }
 }
