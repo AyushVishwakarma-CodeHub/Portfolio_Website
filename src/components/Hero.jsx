@@ -275,19 +275,19 @@ const Hero = () => {
           </div>
 
           <div className="social-links">
-            <a href="https://github.com/AyushVishwakarma-CodeHub" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://github.com/AyushVishwakarma-CodeHub" target="_blank" rel="noopener noreferrer" className="social-icon github">
               <FaGithub size={22} />
             </a>
-            <a href="http://linkedin.com/in/ayushraj2908" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="http://linkedin.com/in/ayushraj2908" target="_blank" rel="noopener noreferrer" className="social-icon linkedin">
               <FaLinkedin size={22} />
             </a>
-            <a href="https://leetcode.com/u/AYUSH_VISHWAKARMA_/" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://leetcode.com/u/AYUSH_VISHWAKARMA_/" target="_blank" rel="noopener noreferrer" className="social-icon leetcode">
               <Code2 size={22} />
             </a>
-            <a href="https://wa.me/918340489386?text=Hi%20Ayush,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20connect!" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://wa.me/918340489386?text=Hi%20Ayush,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20connect!" target="_blank" rel="noopener noreferrer" className="social-icon whatsapp">
               <FaWhatsapp size={22} />
             </a>
-            <a href="mailto:ayushvishwakarmadto29@gmail.com" className="social-icon">
+            <a href="mailto:ayushvishwakarmadto29@gmail.com" className="social-icon mail">
               <Mail size={22} />
             </a>
           </div>
