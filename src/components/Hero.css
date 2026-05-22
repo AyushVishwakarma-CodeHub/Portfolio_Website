@@ -1,3 +1,17 @@
+:root {
+  --next-bg: #09090b;
+  --next-color: #ffffff;
+  --express-bg: #09090b;
+  --express-color: #ffffff;
+}
+
+[data-theme="light"] {
+  --next-bg: #ffffff;
+  --next-color: #000000;
+  --express-bg: #ffffff;
+  --express-color: #000000;
+}
+
 .hero-section {
   min-height: 100vh;
   display: flex;
@@ -152,6 +166,26 @@
   z-index: -1;
   opacity: 0.5;
   filter: blur(15px);
+  transition: opacity 0.4s ease;
+}
+
+/* Active Hover dynamic backglow */
+.glow-frame::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: var(--hover-glow-color);
+  border-radius: var(--border-radius-lg);
+  z-index: -1;
+  opacity: calc(var(--hover-glow-active) * 0.6); /* Fade in when hover is active */
+  filter: blur(22px);
+  transition: opacity 0.4s ease, background 0.4s ease;
+  pointer-events: none;
+}
+
+/* Dim default glow when custom brand color glow is active */
+.glow-frame[style*="--hover-glow-active: 1"]::before {
+  opacity: 0.15;
 }
 
 .image-card {
@@ -161,6 +195,16 @@
   overflow: hidden;
   position: relative;
   padding: 8px;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid var(--glass-border);
+  transform: translate3d(calc(var(--mx, 0) * 10px), calc(var(--my, 0) * 10px), 0);
+  will-change: transform;
+}
+
+/* Dynamically color-mix the photo card's border and shadows when hovered */
+.glow-frame[style*="--hover-glow-active: 1"] .image-card {
+  border-color: color-mix(in srgb, var(--hover-glow-color) 45%, var(--glass-border));
+  box-shadow: 0 0 20px color-mix(in srgb, var(--hover-glow-color) 25%, transparent);
 }
 
 .profile-img {
@@ -234,5 +278,285 @@
   }
   .glow-frame {
     max-width: 280px;
+  }
+}
+
+/* Premium Futuristic Tech Ecosystem Styling */
+.tech-ecosystem-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 3/4;
+  
+  --orbit-rx: 235px;
+  --orbit-ry: 280px;
+  --icon-size: 50px;
+}
+
+/* Mathematically positioned orbital wrappers */
+.ecosystem-icon-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  /* Position, scale, blur, opacity are handled inline via React to prevent animation collisions */
+  
+  /* Optimize performance: transition opacity and filter, but let React update transforms dynamically */
+  transition: opacity 0.4s ease, filter 0.4s ease;
+  will-change: transform, opacity;
+}
+
+/* Bobbing wrapper to decouple from JS orbital movement */
+.icon-glass-card-bobber {
+  width: 100%;
+  height: 100%;
+  animation: float-bob var(--float-duration) ease-in-out var(--float-delay) infinite alternate;
+}
+
+/* Orbit Path Line */
+.orbit-line-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  transform: translate3d(calc(var(--mx, 0) * -5px), calc(var(--my, 0) * -5px), 0);
+  will-change: transform;
+}
+
+.orbit-line-svg ellipse {
+  cx: 50%;
+  cy: 50%;
+  rx: var(--orbit-rx);
+  ry: var(--orbit-ry);
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.06);
+  stroke-width: 1.5px;
+  stroke-dasharray: 6 5; /* Futuristic dashed trajectory */
+}
+
+/* Glowing Laser Light Trail Orbit */
+.orbit-laser-pulse {
+  fill: none;
+  stroke: url(#laser-gradient);
+  stroke-width: 2px;
+  stroke-dasharray: 18 82;
+  stroke-dashoffset: 100;
+  animation: laser-trace 7s linear infinite;
+  filter: drop-shadow(0 0 5px var(--accent-color));
+  opacity: 0.85;
+}
+
+[data-theme="light"] .orbit-line-svg ellipse {
+  stroke: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .orbit-laser-pulse {
+  opacity: 0.65;
+}
+
+@keyframes laser-trace {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Glassmorphic/Icon Wrapper Cards */
+.icon-glass-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* For shape-based icons (no background/borders) */
+.icon-glass-card.no-bg {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.icon-glass-card.no-bg svg {
+  width: 75%;
+  height: 75%;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.icon-glass-card.no-bg::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--glow-color);
+  filter: blur(14px);
+  opacity: 0.22; /* Soft glowing aura behind the raw shape */
+  z-index: -1;
+  transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+}
+
+/* For badge-based icons (with background/borders) */
+.icon-glass-card.has-bg {
+  background: var(--badge-bg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="light"] .icon-glass-card.has-bg {
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.icon-glass-card.has-bg.is-circle {
+  border-radius: 50%;
+}
+
+.icon-glass-card.has-bg.is-square {
+  border-radius: 10px;
+}
+
+.icon-glass-card.has-bg svg {
+  width: 52%;
+  height: 52%;
+  transition: transform 0.3s ease;
+}
+
+.icon-glass-card.has-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--badge-bg);
+  filter: blur(10px);
+  opacity: 0.28;
+  z-index: -1;
+  transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+}
+
+/* Hover Interaction states */
+.ecosystem-icon-wrapper:hover {
+  z-index: 15 !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+.ecosystem-icon-wrapper:hover .icon-glass-card {
+  transform: scale(1.22);
+}
+
+.ecosystem-icon-wrapper:hover .icon-glass-card.no-bg svg {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 0 8px var(--glow-color));
+}
+
+.ecosystem-icon-wrapper:hover .icon-glass-card.no-bg::before {
+  opacity: 0.55;
+  filter: blur(18px);
+  transform: scale(1.25);
+}
+
+.ecosystem-icon-wrapper:hover .icon-glass-card.has-bg {
+  border-color: var(--badge-color);
+  box-shadow: 0 0 22px color-mix(in srgb, var(--badge-bg) 70%, transparent);
+}
+
+.ecosystem-icon-wrapper:hover .icon-glass-card.has-bg::before {
+  opacity: 0.6;
+  filter: blur(15px);
+  transform: scale(1.15);
+}
+
+.ecosystem-icon-wrapper:hover .icon-glass-card.has-bg svg {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Technology tooltips */
+.icon-tooltip {
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.725rem;
+  font-weight: 550;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 20;
+}
+
+[data-theme="light"] .icon-tooltip {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.ecosystem-icon-wrapper:hover .icon-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Keyframe for floating along vertical axis */
+@keyframes float-bob {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(8px);
+  }
+}
+
+/* Responsive radii overrides */
+@media (max-width: 1200px) {
+  .tech-ecosystem-container {
+    --orbit-rx: 195px;
+    --orbit-ry: 240px;
+    --icon-size: 45px;
+  }
+}
+
+@media (max-width: 992px) {
+  .tech-ecosystem-container {
+    --orbit-rx: 220px;
+    --orbit-ry: 260px;
+    --icon-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-ecosystem-container {
+    --orbit-rx: 170px;
+    --orbit-ry: 210px;
+    --icon-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-ecosystem-container {
+    max-width: 280px;
+    --orbit-rx: 150px;
+    --orbit-ry: 185px;
+    --icon-size: 34px;
   }
 }
