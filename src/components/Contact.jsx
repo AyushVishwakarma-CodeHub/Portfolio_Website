@@ -40,8 +40,8 @@ const Contact = () => {
 
           <div className="contact-grid">
             <div className="contact-info">
-              <a href="mailto:ayushvishwakarmadto29@gmail.com" className="info-card glass-panel clickable-card">
-                <div className="info-icon">
+              <a href="mailto:ayushvishwakarmadto29@gmail.com" className="info-card email-card glass-panel clickable-card">
+                <div className="info-icon email">
                   <Mail size={24} />
                 </div>
                 <div>
@@ -49,8 +49,8 @@ const Contact = () => {
                   <span className="info-link">ayushvishwakarmadto29@gmail.com</span>
                 </div>
               </a>
-              <a href="tel:+918340489386" className="info-card glass-panel clickable-card">
-                <div className="info-icon">
+              <a href="tel:+918340489386" className="info-card phone-card glass-panel clickable-card">
+                <div className="info-icon phone">
                   <Phone size={24} />
                 </div>
                 <div>
@@ -58,8 +58,8 @@ const Contact = () => {
                   <span className="info-link">+91 8340489386</span>
                 </div>
               </a>
-              <a href="https://wa.me/918340489386?text=Hi%20Ayush,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20connect!" target="_blank" rel="noopener noreferrer" className="info-card glass-panel clickable-card">
-                <div className="info-icon">
+              <a href="https://wa.me/918340489386?text=Hi%20Ayush,%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20connect!" target="_blank" rel="noopener noreferrer" className="info-card whatsapp-card glass-panel clickable-card">
+                <div className="info-icon whatsapp">
                   <FaWhatsapp size={24} />
                 </div>
                 <div>
@@ -67,8 +67,8 @@ const Contact = () => {
                   <span className="info-link">+91 8340489386</span>
                 </div>
               </a>
-              <div className="info-card glass-panel">
-                <div className="info-icon">
+              <div className="info-card location-card glass-panel">
+                <div className="info-icon location">
                   <MapPin size={24} />
                 </div>
                 <div>

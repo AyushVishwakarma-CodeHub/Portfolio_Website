@@ -26,19 +26,66 @@
 
 .info-card:hover {
   transform: translateX(10px);
-  border-color: var(--accent-color);
 }
 
 .info-icon {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgba(59, 130, 246, 0.1);
-  color: var(--accent-color);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
+/* Brand Colorful Icons & Hover States */
+.info-icon.email {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+.info-card.email-card:hover {
+  border-color: #ef4444;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.15);
+}
+.info-card.email-card:hover .info-link {
+  color: #ef4444;
+}
+
+.info-icon.phone {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+.info-card.phone-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+}
+.info-card.phone-card:hover .info-link {
+  color: #3b82f6;
+}
+
+.info-icon.whatsapp {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+.info-card.whatsapp-card:hover {
+  border-color: #22c55e;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.15);
+}
+.info-card.whatsapp-card:hover .info-link {
+  color: #22c55e;
+}
+
+.info-icon.location {
+  background: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+}
+.info-card.location-card:hover {
+  border-color: #a855f7;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
+}
+.info-card.location-card:hover p {
+  color: #a855f7;
 }
 
 .info-card > div:last-child {
@@ -63,10 +110,7 @@
   transition: var(--transition-smooth);
   word-break: break-all;
   overflow-wrap: anywhere;
-}
-
-.info-card:hover .info-link {
-  color: var(--accent-color);
+  display: block;
 }
 
 .contact-form-container {
@@ -154,7 +198,7 @@
   }
   
   .contact-form-container {
-    padding: 30px 20px;
+    padding: 30px 20px 45px 20px;
   }
   
   .info-card {
@@ -170,7 +214,7 @@
 
 @media (max-width: 480px) {
   .contact-form-container {
-    padding: 20px 16px;
+    padding: 20px 16px 40px 16px;
   }
   
   .info-card {
