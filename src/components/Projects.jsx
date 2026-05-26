@@ -17,7 +17,7 @@ const Projects = () => {
       github: "https://github.com/AyushVishwakarma-CodeHub/CampusBite",
       live: "https://campusbitelive.vercel.app/",
       image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop",
-      category: "Full Stack"
+      category: ["Full Stack"]
     },
     {
       title: "NeuroLearn AI",
@@ -26,7 +26,7 @@ const Projects = () => {
       github: "https://github.com/AyushVishwakarma-CodeHub/NeuroLearn-AI",
       live: "https://neurolearnai-portal.vercel.app/",
       image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
-      category: "AI & ML"
+      category: ["Full Stack", "AI & ML"]
     },
     {
       title: "Bhasha-Verify",
@@ -35,7 +35,7 @@ const Projects = () => {
       github: "https://github.com/AyushVishwakarma-CodeHub/Bhasha-Verify",
       live: "https://bhasha-verify.vercel.app",
       image: "/bhasha-verify-preview.png",
-      category: "AI & ML"
+      category: ["AI & ML"]
     },
     {
       title: "Gymora Mobile App",
@@ -44,7 +44,7 @@ const Projects = () => {
       github: "#",
       live: "#",
       image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop",
-      category: "Mobile"
+      category: ["Mobile"]
     },
     {
       title: "MarketMind AI",
@@ -53,13 +53,13 @@ const Projects = () => {
       github: "https://github.com/AyushVishwakarma-CodeHub/MarketMind-Ai",
       live: "https://market-mind-ai-black.vercel.app",
       image: "/marketmind_ai_preview.png",
-      category: "Full Stack"
+      category: ["Full Stack"]
     }
   ];
 
   const filteredProjects = activeCategory === "All"
     ? projects
-    : projects.filter(project => project.category === activeCategory);
+    : projects.filter(project => project.category.includes(activeCategory));
 
   return (
     <section id="projects" className="projects-section">

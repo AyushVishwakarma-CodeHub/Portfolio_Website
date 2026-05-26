@@ -11,35 +11,178 @@
 
 .skill-category-card {
   padding: 32px;
-  transition: var(--transition-smooth);
   display: flex;
   flex-direction: column;
   gap: 24px;
+  border-radius: var(--border-radius-md);
+  
+  /* Option 1: Spotlight Border */
+  border: 1px solid transparent;
+  background: linear-gradient(var(--bg-secondary), var(--bg-secondary)) padding-box,
+              radial-gradient(
+                350px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+                var(--category-color, rgba(255, 255, 255, 0.2)),
+                rgba(255, 255, 255, 0.05) 80%
+              ) border-box;
+  
+  position: relative;
+  overflow: hidden;
+  
+  /* Option A: 3D Tilt-on-Hover properties */
+  transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+}
+
+/* Option 1: Spotlight inner background glow */
+.skill-category-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    300px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    var(--category-color-light, rgba(59, 130, 246, 0.03)),
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.skill-category-card:hover::after {
+  opacity: 1;
 }
 
 .skill-category-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-color);
-  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+  /* Dynamic 3D translation & rotation on hover */
+  transform: perspective(1000px) translate3d(0, -5px, 15px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px var(--category-color-light, rgba(59, 130, 246, 0.15));
+  /* Fast tracking transition when active */
 }
 
+/* Option 3: Revolving Border Laser Beam Overlay */
+.border-beam-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.border-beam-rect {
+  x: 1px;
+  y: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  rx: 11px; /* Match card border radius */
+  fill: none;
+  stroke: var(--category-color, var(--accent-color));
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+  
+  /* Idle state: slow, subtle loop */
+  stroke-dasharray: 0.15 0.85; /* Laser trail is 15% of the card perimeter */
+  stroke-dashoffset: 0;
+  opacity: 0.12;
+  animation: border-beam-loop 12s linear infinite;
+  transition: opacity 0.4s ease, stroke-width 0.4s ease, filter 0.4s ease;
+}
+
+/* Highlight, thicken, and speed up on card hover */
+.skill-category-card:hover .border-beam-rect {
+  opacity: 0.95;
+  stroke-width: 2.2px;
+  filter: drop-shadow(0 0 4px var(--category-color)) drop-shadow(0 0 10px var(--category-color));
+  animation: border-beam-loop 4s linear infinite; /* Faster rotation on hover */
+}
+
+@keyframes border-beam-loop {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -1;
+  }
+}
+
+/* Float items in 3D parallax space */
 .category-header {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding-bottom: 16px;
   margin-bottom: 8px;
+  
+  /* Layer 3D Depth Shift (pulled 30px forward) */
+  transform: translateZ(30px);
+  transform-style: preserve-3d;
+}
+
+.category-skills {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  
+  /* Layer 3D Depth Shift (pulled 15px forward) */
+  transform: translateZ(15px);
+  transform-style: preserve-3d;
 }
 
 .category-icon {
-  color: var(--accent-color);
-  background: rgba(59, 130, 246, 0.1);
+  color: var(--category-color, var(--accent-color));
+  background: var(--category-color-light, rgba(59, 130, 246, 0.1));
   padding: 10px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: var(--transition-smooth);
+  position: relative;
+  z-index: 2;
+}
+
+/* Option 2: Hologram Pulsing Icon Glow */
+.category-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  background: var(--category-color, var(--accent-color));
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(12px);
+  opacity: 0.15;
+  z-index: -1;
+  animation: icon-pulse 3s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes icon-pulse {
+  0% {
+    opacity: 0.1;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+  100% {
+    opacity: 0.25;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+}
+
+.skill-category-card:hover .category-icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .category-title {
@@ -50,13 +193,10 @@
   margin: 0;
 }
 
-.category-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
 .skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 0.85rem;
   color: var(--text-secondary);
   background: rgba(255, 255, 255, 0.03);
@@ -68,12 +208,31 @@
   cursor: default;
 }
 
+.skill-badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-badge-name {
+  transition: color 0.3s ease;
+}
+
 .skill-badge:hover {
-  background: var(--accent-gradient);
-  color: #fff;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text-primary);
+  border-color: var(--skill-color);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4), 0 0 12px var(--skill-color);
+}
+
+.skill-badge:hover .skill-badge-icon {
+  transform: scale(1.2);
+}
+
+.skill-badge:hover .skill-badge-name {
+  color: var(--text-primary);
 }
 
 /* Responsive Adjustments */
@@ -84,5 +243,10 @@
   
   .skill-category-card {
     padding: 24px;
+  }
+  
+  /* Disable 3D tilt movement on mobile for touch performance */
+  .skill-category-card {
+    transform: none !important;
   }
 }
